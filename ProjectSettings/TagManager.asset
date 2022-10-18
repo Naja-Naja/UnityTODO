@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SceneData
+  - deletebutton
   layers:
   - Default
   - TransparentFX
@@ -41,4 +42,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: a
+    uniqueID: 3028265097
+    locked: 0
+  - name: b
+    uniqueID: 97069255
+    locked: 0
+  - name: c
+    uniqueID: 1288408685
     locked: 0
