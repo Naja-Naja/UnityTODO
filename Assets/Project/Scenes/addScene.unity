@@ -381,8 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227c59bd0951e48568c10b708bd1d1dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addTaskButton: {fileID: 0}
-  inputText: {fileID: 0}
+  addTaskButton: {fileID: 141841024}
+  inputText: {fileID: 495109946}
 --- !u!1 &205947305
 GameObject:
   m_ObjectHideFlags: 0
