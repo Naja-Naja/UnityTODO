@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Task : MonoBehaviour
+public class TaskText : MonoBehaviour
 {
     [SerializeField] Text text;
     public void TextChange(string content)
