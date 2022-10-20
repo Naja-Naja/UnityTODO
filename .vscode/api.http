@@ -1,0 +1,19 @@
+POST http://e8fe-106-184-155-206.ngrok.io/todo/delete HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "10"
+}
+###
+
+POST http://e8fe-106-184-155-206.ngrok.io/todo HTTP/1.1
+Content-Type: application/json
+
+{
+    "message": "ppp"
+}
+
+### 
+
+GET http://e8fe-106-184-155-206.ngrok.io/todo
+Content-Type: application/json

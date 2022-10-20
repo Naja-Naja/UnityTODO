@@ -1,8 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.Json;
 using UnityEngine;
 using UnityEngine.Networking;
-using System.Text.Json;
+
+class Todo
+{
+    public int id { get; set; }
+    public string message { get; set; }
+    public DateTime createAt { get; set; }
+    public DateTime updateAt { get; set; }
+}
 public class GetList : MonoBehaviour
 {
     [SerializeField] ListView listView;
@@ -13,7 +22,7 @@ public class GetList : MonoBehaviour
 
     IEnumerator GetText()
     {
-        UnityWebRequest www = UnityWebRequest.Get("https://raw.githubusercontent.com/OHMORIYUSUKE/animeapp-db/api/2022-4.json");
+        UnityWebRequest www = UnityWebRequest.Get("http://e8fe-106-184-155-206.ngrok.io/todo");
         yield return www.SendWebRequest();
 
         if (www.isNetworkError || www.isHttpError)
@@ -22,13 +31,13 @@ public class GetList : MonoBehaviour
         }
         else
         {
-            var animeList = JsonSerializer.Deserialize<Anime[]>(www.downloadHandler.text);
+            var todoList = JsonSerializer.Deserialize<Todo[]>(www.downloadHandler.text);
 
-            for (int i = 0; i < animeList.Length; i++)
+            for (int i = 0; i < todoList.Length; i++)
             {
                 //animeDBのidとtitleをlistviewに登録する
-                Debug.Log(animeList[i].title);
-                listView.taskCollection.Add(new Task { id = i, context = animeList[i].title });
+                Debug.Log(todoList[i].message);
+                listView.taskCollection.Add(new Task { id = todoList[i].id, context = todoList[i].message });
             }
 
             //  または、結果をバイナリデータとして取得します
