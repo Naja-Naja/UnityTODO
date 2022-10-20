@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class ButtonSE : MonoBehaviour
 {
-    AudioClip buttonSE;
+    [SerializeField] AudioClip SE;
+
     public void onClick()
     {
-        Debug.Log("click");   
-        AudioManager.SE_Play(buttonSE);
+        AudioManager.SE_Play(SE);
     }
 
 }
